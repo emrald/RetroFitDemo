@@ -57,6 +57,7 @@ public class WithBasicAuthentication extends AppCompatActivity {
                 .build();
 
         api = retrofit.create(WithBasicAuthApi.class);
+        // Call<List<data>> call = api.getProduct("http://oldnavy.gap.com/browse/product.do?cid=1018059&pcid=5475&vid=1&pid=120007212");
 
         final ProgressDialog progressDoalog;
         progressDoalog = new ProgressDialog(WithBasicAuthentication.this);
@@ -64,6 +65,9 @@ public class WithBasicAuthentication extends AppCompatActivity {
         progressDoalog.setMessage("Its loading....");
         progressDoalog.show();
 
+        //    Map<String, String> queryParams = new HashMap<>();
+        //   queryParams.put("user[url]","http://oldnavy.gap.com/browse/product.do?cid=1018059&pcid=5475&vid=1&pid=120007212");
+        //  String authData = "Basic " + Base64.encodeToString(("adminwp" + ":" + "?mnb098!").getBytes(), Base64.NO_WRAP);
         Call<ProductResponse> call = api.getTopRatedMovies();
 
         call.enqueue(new Callback<ProductResponse>() {
@@ -87,6 +91,34 @@ public class WithBasicAuthentication extends AppCompatActivity {
                 progressDoalog.dismiss();
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
+
+           /* @Override
+            public void onResponse(Response<ProductResponse> call, Response<ProductResponse> response) {
+
+                //In this point we got our hero list
+                //thats damn easy right ;)
+                progressDoalog.dismiss();
+                //   List<ProductResponse> ProductList = response.body().getMessage();
+
+                Log.e("response", response.body().getMessage() + " : response");
+
+                //Creating an String array for the ListView
+               *//*  String[] heroes = new String[ProductList.size()];
+
+                //looping through all the heroes and inserting the names inside the string array
+                for (int i = 0; i < ProductList.size(); i++) {
+                    heroes[i] = ProductList.get(i).getMessage();
+                }
+
+                //displaying the string array into listview
+                listView.setAdapter(new ArrayAdapter<String>(WithBasicAuthentication.this, android.R.layout.simple_list_item_1, heroes));
+            *//*    //now we can do whatever we want with this list
+            }
+            @Override
+            public void onFailure( Throwable t) {
+                progressDoalog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }*/
         });
 
     }
