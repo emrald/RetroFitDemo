@@ -45,7 +45,7 @@ public class WithPostMethod extends AppCompatActivity {//implements Callback<Log
                 Request originalRequest = chain.request();
 
                 Request.Builder builder = originalRequest.newBuilder().header("Authorization",
-                        Credentials.basic("adminwp", "?mnb098!"));
+                        Credentials.basic("", ""));
 
                 Request newRequest = builder.build();
                 return chain.proceed(newRequest);
@@ -64,16 +64,6 @@ public class WithPostMethod extends AppCompatActivity {//implements Callback<Log
         progressDoalog.setMax(100);
         progressDoalog.setMessage("Its loading....");
         progressDoalog.show();
-/*try{
-           JSONObject paramObject = new JSONObject();
-            paramObject.put("email", "test@gmail.com");
-            paramObject.put("password", "12345678");*/
-
-// with get map method working
-
-           /* Map<String,String> map = new HashMap<String, String>();
-            map.put("email","test@gmail.com");
-            map.put("password","12345678");*/
 
         call = api.getLoginResponse("test@gmail.com","12345678");
 

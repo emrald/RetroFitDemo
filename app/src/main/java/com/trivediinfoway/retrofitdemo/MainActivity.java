@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         //now making the call object
         //Here we are using the api method that we created inside the api interface
         Call<List<Hero>> call = api.getHeroes();
-       // Call<List<Hero>> call = api.getHeroes();
 
         //then finallly we are making the call using enqueue()
         //it takes callback interface as an argument
@@ -48,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
         progressDoalog = new ProgressDialog(MainActivity.this);
         progressDoalog.setMax(100);
         progressDoalog.setMessage("Its loading....");
-     //   progressDoalog.setTitle("ProgressDialog bar example");
-    //    progressDoalog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+
         // show it
         progressDoalog.show();
         call.enqueue(new Callback<List<Hero>>() {
@@ -60,14 +58,6 @@ public class MainActivity extends AppCompatActivity {
                 //thats damn easy right ;)
                 progressDoalog.dismiss();
                 List<Hero> heroList = response.body();
-
-                //Creating an String array for the ListView
-               // String[] heroes = new String[heroList.size()];
-
-                //looping through all the heroes and inserting the names inside the string array
-               /* for (int i = 0; i < heroList.size(); i++) {
-                    heroes[i] = heroList.get(i).getName();
-                }*/
 
                 //displaying the string array into listview
                 listView.setAdapter(new CustomAdapter(MainActivity.this, R.layout.row, heroList));
