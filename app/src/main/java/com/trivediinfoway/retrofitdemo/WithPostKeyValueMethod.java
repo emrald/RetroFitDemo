@@ -96,6 +96,5 @@ public class WithPostKeyValueMethod extends AppCompatActivity {
                 Log.w("TAG", "Failed to read value.", error.toException());
             }
         });
-
     }
 }
