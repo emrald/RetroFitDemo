@@ -96,5 +96,31 @@ public class WithPostKeyValueMethod extends AppCompatActivity {
                 Log.w("TAG", "Failed to read value.", error.toException());
             }
         });
+
+// Trackly api coding
+
+      /* Call<TracklyClass> call = api.getLoginResponseTrckly("http://oldnavy.gap.com/browse/product.do?cid=1018059&pcid=5475&vid=1&pid=120007212");
+        call.enqueue(new Callback<TracklyClass>() {
+            @Override
+            public void onResponse(Call<TracklyClass> call, Response<TracklyClass> response) {
+                progressDoalog.dismiss();
+
+                Log.e("response", response.body().getMessage() + " : response");
+               *//* textView13.setText(response.body().getEmail()+"");
+                textView14.setText(response.body().getAddress()+"");
+                textView15.setText(response.body().getCity()+"");
+                textView16.setText(response.body().getLast_name()+"");
+                textView17.setText(response.body().getState()+"");
+                textView18.setText(response.body().getUser_role()+"");*//*
+            }
+
+            @Override
+            public void onFailure(Call<TracklyClass> call, Throwable t) {
+                progressDoalog.dismiss();
+                Log.e("response", t.getMessage() + " : response");
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+*/
     }
 }
