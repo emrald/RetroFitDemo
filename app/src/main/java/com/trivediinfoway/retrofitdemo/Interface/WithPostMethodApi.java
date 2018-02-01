@@ -11,14 +11,12 @@ import retrofit2.http.POST;
  * Created by TI A1 on 12-10-2017.
  */
 public interface WithPostMethodApi {
-    String BASE_URL = "http://freehotelcoupons.com/";
+    String BASE_URL = "Your Base API";
 
     // with post method login
     @FormUrlEncoded
     @POST("hotel_api/login?")//email=test@gmail.com&password=12345678")
     Call<LoginClass> getLoginResponse(@Field("email") String email,
                                       @Field("password") String password);
-    //with get method login
-    /*@GET("hotel_api/login?")//email=test@gmail.com&password=12345678")
-    Call<LoginClass> getLoginResponse(@QueryMap Map<String,String> body);*/
+
 }
