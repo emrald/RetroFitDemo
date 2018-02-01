@@ -12,8 +12,15 @@ import retrofit2.http.POST;
  */
 public interface WithPostKeyValueApi {
 
+    // Trackly api
+    /*String BASE_URL = "http://taylor-moss.com/api/";//"http://guestrewardsclub.com/";
+    @FormUrlEncoded
+    @POST("track/check?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEzLCJpc3MiOiJodHRwOi8vdGF5bG9yLW1vc3MuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNTA1ODAxMTQ4LCJleHAiOjE1MjE1NjkxNDgsIm5iZiI6MTUwNTgwMTE0OCwianRpIjoiVUVlT3pQYUVOem5UNmRqaSJ9.6ls9sSMcsM79xU8Sws-HCpjguNMCGD3ifuLryaDPDTY")
 
-    String BASE_URL = "Base API";
+    Call<TracklyClass> getLoginResponseTrckly(@Field("url") String action);
+    */
+
+    String BASE_URL = "http://guestrewardsclub.com/";
     @FormUrlEncoded
     @POST("api.php")
     Call<RewardsClass> getLoginResponse(@Field("action") String action,
